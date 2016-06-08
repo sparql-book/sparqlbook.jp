@@ -178,6 +178,48 @@
 								よろしくお願いいたします。
 							</li>
 							<div class="errorbox">
+								<li class="year">2016年6月8日更新</li>
+								<h4>164ページのサンプルコード：リスト5-19の11行目にMINUS句を挿入</h4>
+								<li>2駅間でお互いに"prop-ja:次の駅"を指すデータがあった場合にJavaScriptでエラーが発生するため、そのようなデータをMINUS句で省くように修正しました。</li>
+								<li>誤：</li>
+								<li>?parent prop-ja:次の駅 ?child .</li>
+                                                                <li>?parent rdfs:label ?parent_label .</li>
+								<li>↓</li>
+								<li>正：
+								<li>?parent prop-ja:次の駅 ?child .</li>
+                                                                <li>MINUS {</li>
+                                                                <li>&nbsp;&nbsp;?child prop-ja:次の駅 ?parent .</li>
+                                                                <li>}</li>
+                                                                <li>?parent rdfs:label ?parent_label .</li>
+								<li>※なお、ダウンロード用サンプルプログラムは修正済みです。</li>
+							</div>
+							<div class="errorbox">
+								<li class="year">2016年6月8日更新</li>
+								<h4>156ページのjsサンプルコード：リスト5-11 render関数の15行目</h4>
+								<li>NULLチェックを追加しました。</li>
+								<li>誤：row.append($("<td>").text(item[this].value));</li>
+								<li>↓</li>
+								<li>正：
+                                                                <li>if (item[this] &amp;&amp; item[this].value) {</li>
+                                                                <li>&nbsp;&nbsp;row.append($("<td>").text(item[this].value));</li>
+                                                                <li>} else {</li>
+                                                                <li>&nbsp;&nbsp;row.append($("<td>").text(""));</li>
+                                                                <li>}</li>
+								<li>※なお、ダウンロード用サンプルプログラムは修正済みです。</li>
+							</div>
+							<div class="errorbox">
+								<li class="year">2016年6月8日更新</li>
+								<h4>42ページの図3-5 3-2.rqのクエリ結果</h4>
+								<li>DBpedia Japaneseのデータ更新によりクエリで得られる結果が変わりました。</li>
+								<li>※他にも結果が変わるクエリがいくつかありますが、特に混乱を招くこの部分だけ訂正を記載しています。</li>
+								<li></li>
+								<li>前：company = http://ja.dbpedia.org/resource/オフィス北野</li>
+								<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_of_employees = 33</li>
+								<li>↓</li>
+								<li>後：company = http://ja.dbpedia.org/resource/太田プロダクション</li>
+                                                                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_of_employees = 50</li>
+							</div>
+							<div class="errorbox">
 								<li class="year">2016年5月2日更新</li>
 								<h4>188ページのサンプルファイル：リスト 6-17 6-17.rqの9行目</h4>
 								<li>誤：HAVING (COUNT (DISTINCT ?magazine) AS ?count) &lt;= 2</li>
