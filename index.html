@@ -178,6 +178,40 @@
 								よろしくお願いいたします。
 							</li>
 							<div class="errorbox">
+								<li class="year">2016年11月11日更新</li>
+								<h4>サンプルコード：リスト5-4</h4>
+								<li>DBpediaのデータ変更によりクエリを修正しました。</li>
+								<li>誤：</li>
+								<li>?s a yago:PrefecturesOfJapan ;</li>
+								<li>  rdfs:label ?pref ;</li>
+								<li>  dbpedia-owl:areaTotal ?area .</li>
+								<li>FILTER (lang(?pref) = 'en')</li>
+								<li>↓</li>
+								<li>正：</li>
+								<li>?s a yago:WikicatPrefecturesOfJapan ;</li>
+								<li>  rdfs:label ?pref ;</li>
+								<li>  dbpedia-owl:areaTotal ?area .</li>
+								<li>FILTER (lang(?pref) = 'en')</li>
+								<li>FILTER (str(?pref) != 'Onjuku')</li>
+								<h4>サンプルコード：リスト5-22</h4>
+								<li>DBpediaのデータ変更によりクエリを修正しました。</li>
+								<li>誤：</li>
+								<li>?s a yago:PrefecturesOfJapan ;</li>
+								<li>  rdfs:label ?label ;</li>
+								<li>  dbpedia-owl:populationTotal ?population .</li>
+								<li>  dbpedia-owl:areaTotal ?area .</li>
+								<li>FILTER (lang(?pref) = 'en')</li>
+								<li>↓</li>
+								<li>正：</li>
+								<li>?s a yago:WikicatPrefecturesOfJapan ;</li>
+								<li>  rdfs:label ?label ;</li>
+								<li>  dbpedia-owl:populationTotal ?population .</li>
+								<li>  dbpedia-owl:areaTotal ?area .</li>
+								<li>FILTER (lang(?pref) = 'en')</li>
+								<li>FILTER (str(?s) != 'http://dbpedia.org/resource/Onjuku')</li>
+								<li>※なお、ダウンロード用サンプルプログラムは<a href="https://github.com/sparql-book/sparql-book/commit/a30896a1cce3411339c8468c14900a426031ecec">修正済み</a>です。</li>
+							</div>
+							<div class="errorbox">
 								<li class="year">2016年6月8日更新</li>
 								<h4>164ページのサンプルコード：リスト5-19の11行目にMINUS句を挿入</h4>
 								<li>2駅間でお互いに"prop-ja:次の駅"を指すデータがあった場合にJavaScriptでエラーが発生するため、そのようなデータをMINUS句で省くように修正しました。</li>
